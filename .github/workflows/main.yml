@@ -31,6 +31,8 @@ jobs:
         project_key: ${{ vars.ORCA_SECURITY_PROJECT_KEY }} 
         image: my-image-name:${{ env.GITHUB_SHA_SHORT }}
         debug: true
+        format: "sarif"
+        output: "results/"
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
